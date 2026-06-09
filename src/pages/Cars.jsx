@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
 import carData from "../data/carData";
 
 function Cars() {
+
   const [cars] = useState(carData);
 
   const [searchParams, setSearchParams] =
@@ -25,8 +25,6 @@ function Cars() {
     <>
       <Navbar />
 
-      {/* Banner */}
-
       <section className="cars-banner">
         <h1>Explore Our Car Collection</h1>
 
@@ -35,8 +33,6 @@ function Cars() {
           comfort all in one place.
         </p>
       </section>
-
-      {/* Search */}
 
       <div className="search-container">
 
@@ -52,8 +48,6 @@ function Cars() {
         />
 
       </div>
-
-      {/* Cars Grid */}
 
       <div className="cars-grid">
 
@@ -83,19 +77,21 @@ function Cars() {
 
               <div className="btn-group">
 
-                <Link
-                  to={`/car/${car.id}`}
+                <a
+                  href={car.wikiLink}
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <button className="view-btn">
                     View Details
                   </button>
-                </Link>
+                </a>
 
-                <Link to="/contact">
+                <a href="/contact">
                   <button className="book-btn">
                     Book Test Drive
                   </button>
-                </Link>
+                </a>
 
               </div>
 
