@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import carData from "../data/carData";
+import { Link } from "react-router-dom";
 
 function Cars() {
 
@@ -87,11 +88,11 @@ function Cars() {
                   </button>
                 </a>
 
-                <a href="/contact">
-                  <button className="book-btn">
-                    Book Test Drive
-                  </button>
-                </a>
+                <Link to="/contact">
+  <button className="book-btn">
+    Book Test Drive
+  </button>
+</Link>
 
               </div>
 
